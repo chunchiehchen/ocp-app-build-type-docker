@@ -1,4 +1,4 @@
-import os
+import os,datetime
 from flask import Flask
 app = Flask(__name__)
 
@@ -6,9 +6,9 @@ app = Flask(__name__)
 def main():
     return "hello,world"
 
-@app.route('/hello')
+@app.route('/now')
 def hello():
-    return 'world'
+    return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 if __name__ == "__main__":
     app.run()
